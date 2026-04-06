@@ -84,18 +84,47 @@ Fix wrong MCP script path in install-mcp skill
 - If in doubt about a file, check `.gitignore` first
 - Run `git status --short` before committing to review what's staged
 
-### 5. Don't push unless asked
+### 5. Push and keep GitHub in sync
 
-Commits are local and safe. Never push to a remote unless the user explicitly asks. If there's no remote configured, that's fine — local git history is still valuable for tracking changes and being able to undo things.
+After committing, if the repo has a remote configured, push automatically:
+```bash
+git remote -v 2>/dev/null | grep -q origin && git push origin $(git branch --show-current) 2>/dev/null || true
+```
 
-### 6. Handle existing dirty state
+If there's no remote, that's fine — local git history is still valuable.
+
+### 6. Maintain a README.md
+
+Every project under `/home/sabro/projects/` should have a `README.md` at its root. If one doesn't exist, create it after the initial commit.
+
+**When to update the README:**
+- After adding a new feature, skill, hook, agent, or MCP server
+- After changing the project structure (new directories, renamed files)
+- After a significant config change (new slash commands, new plugins)
+- At the end of a session if the project changed substantially
+
+**What the README should contain:**
+- Project name and one-line description
+- What the project does (features, capabilities)
+- Directory structure overview (if non-obvious)
+- How to install / set up / run
+- Available commands, skills, or API endpoints (if applicable)
+- Dependencies or prerequisites
+
+**How to update:**
+- Read the current README first
+- Only update sections that are stale or missing — don't rewrite the whole file
+- Keep it concise — the README is a quick reference, not a novel
+- Match the existing style and tone
+
+### 7. Handle existing dirty state
 
 If you start a session and find uncommitted changes from a previous session:
 1. Run `git status --short` and `git diff --stat` to understand what changed
 2. If the changes look intentional, commit them with a descriptive message
 3. If they look like leftover junk (temp files, test outputs), ask the user before committing
 
-### 7. Use branches for risky work
+### 8. Use branches for risky work
 
 If you're about to make a big change that might not work out (refactoring, experimental features), create a branch first:
 ```bash
