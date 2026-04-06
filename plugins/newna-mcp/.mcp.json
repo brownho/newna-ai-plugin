@@ -1,0 +1,7 @@
+{
+  "powerbi-knowledge": {
+    "type": "stdio",
+    "command": "/home/sabro/projects/powerbi-knowledge-mcp/deploy/run-mcp.sh",
+    "args": []
+  }
+}
