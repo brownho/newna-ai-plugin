@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "newna-ai",
+  "description": "NewNa.AI server plugins — MCP server installers, git automation, and tools for the newna.ai VPS",
+  "owner": {
+    "name": "brownho",
+    "email": "brownho@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "newna-mcp",
+      "description": "Install and manage NewNa.AI MCP servers (powerbi-knowledge, etc.) with automatic environment detection, plus git autopilot for hands-free version control",
+      "source": "./plugins/newna-mcp",
+      "category": "development"
+    }
+  ]
+}
