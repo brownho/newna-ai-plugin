@@ -16,6 +16,12 @@
       "description": "Power BI PBIP development toolkit — cache cleanup hook, measure cleanup, DAX optimization, data dictionary, changelog, project scaffolding, and comprehensive model review",
       "source": "./plugins/newna-powerbi",
       "category": "development"
+    },
+    {
+      "name": "newna-ops",
+      "description": "Server operations toolkit — safe deployments, health monitoring, log analysis, database maintenance, SSL monitoring, secret scanning, nginx safety, backup verification, and restart debugging for the newna.ai VPS",
+      "source": "./plugins/newna-ops",
+      "category": "operations"
     }
   ]
 }
