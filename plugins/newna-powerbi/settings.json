@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/pbip-cache-cleanup.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}
